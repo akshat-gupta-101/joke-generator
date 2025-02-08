@@ -1,0 +1,41 @@
+version: "0.0.1"
+
+metadata:
+  name: "joke-generator"
+  description: "This flow helps you generate jokes or stand-up comedy scripts."
+  author: "akshat-gupta"
+  tags: [jokes, comedy, humor, stand-up]
+  private: false
+
+inputs:
+  topic:
+    type: string
+    description: "Enter the topic of the joke or comedy routine."
+    required: true
+    example: "Technology, relationships, office life, etc."
+  style:
+    type: string
+    description: "Enter the style of humor you prefer."
+    required: true
+    example: "Dark, observational, pun-based, dad jokes, etc."
+
+model:
+  provider: "anthropic"
+  name: "claude-3.5-sonnet"
+
+prompt: |
+  Write a joke or a short stand-up comedy routine about {topic} in the style of {style} humor. Straightaway start with your script without saying to me anything like "Here's your script..."
+
+readme: |
+  This flow helps you generate jokes or stand-up comedy routines based on the topic and style you provide. 
+  The model used in this flow is Claude 3.5 Sonnet.
+
+  Example:  
+  **Input1:** Topic - Technology  
+  **Input2:** Style - Observational  
+
+  **Output:**  
+  "You ever notice how WiFi works perfectly fine until you really need it? 
+  Like, you can stream 4K cat videos all day, but the moment you’re on a Zoom call with your boss, 
+  your internet decides to take a nap!" 😂
+
